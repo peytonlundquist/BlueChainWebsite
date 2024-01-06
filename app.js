@@ -2,33 +2,7 @@
 // Set up scene
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById('background').appendChild(renderer.domElement);
-
-
-// Set up a gradient background
-const canvas = document.createElement('canvas');
-const context = canvas.getContext('2d');
-canvas.width = 256;
-canvas.height = 256;
-
-// Create gradient
-const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-gradient.addColorStop(0, '#000000 '); // Dark blue color
-gradient.addColorStop(0.5, '#061D3A '); // Light blue color
-gradient.addColorStop(1, '#000000 '); // Lighter blue color
-
-// Fill the canvas with the gradient
-context.fillStyle = gradient;
-context.fillRect(0, 0, canvas.width, canvas.height);
-
-// Create a texture from the canvas
-const backgroundTexture = new THREE.CanvasTexture(canvas);
-
-// Apply the texture to the background
-scene.background = backgroundTexture;
-
+var renderer = new THREE.WebGLRenderer({alpha: true, antialias: false});
 
 // Create a reactive network of nodes and connections
 var nodes = [];
@@ -66,8 +40,8 @@ for (let i = 0; i < 25; i++) {
     }
 }
 
-camera.position.z = 11;
-camera.position.y = -3;
+camera.position.z = 7;
+camera.position.y = -1;
 camera.position.x = 0;
 
 
@@ -91,12 +65,20 @@ function animate() {
 
 // Resize function
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // camera.aspect = window.innerWidth / window.innerHeight/2;
+    // camera.updateProjectionMatrix();
+    //renderer.setSize(window.innerWidth, window.innerHeight/2);
 }
 
 window.addEventListener('resize', onWindowResize, false);
 
 // Call the animation function
 animate();
+
+container = document.getElementById( 'canvas' );
+// document.body.appendChild( container );
+
+// renderer = new THREE.WebGLRenderer({alpha: true, antialias: false});
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize(window.innerWidth, window.innerHeight/2.5);
+container.appendChild( renderer.domElement );

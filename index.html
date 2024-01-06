@@ -7,16 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            color: #ADD8E6; /* Light blue color code */
+            color: #ffffff; /* Light blue color code */
             font-family: 'Arial', sans-serif; /* Use a cooler font-family, e.g., Arial */
         }
     </style>
 </head>
 
 <body>
-    <div id="background"></div>
-
-
     <nav>
         <ul>
             <li><h>BlueChain</h></li>
@@ -27,16 +24,59 @@
     </nav>
 
     <main>
-        <section id="home">
-            <header>An open-source decentralized, distributed, ready-to-deploy blockchain framework</header>
-            <!-- Content for the Home section -->
+
+        <section class="hero-container">
+            <div id="canvas" class="hero-wrapper" >
+                
+            </div>
         </section>
+
+        <section class="description-container">
+            <div class="description-wrapper">
+                <h1>BlueChain is a distributed, decentralized 
+                    blockchain network and research framework. </h1>
+                <br>
+                <p1>This network and research framework is being developed for the purpose of student researchers, 
+                    interested in developing blockchain solutions. We provide an alternate blockchain network option 
+                    to expirement with, without the burden of high learning curves associated with softwares such as 
+                    HyperLedger, Ethereum, etc.
+
+                    This software is not a public network costing gas fees to expirement with, nor is its implementation
+                     complex. With this, researchers or other curious people are invited expirement with and fork our 
+                     software to meet their use case.</p1>
+            </div>
+        </section>
+
+        <section class="description-container">
+            <div class="description-wrapper">
+                <h1>Framework for any blockchain idea</h1>
+                <br>
+                <h1>Easy Configurability</h1>
+                <br>
+                <h1>Accessable code base</h1>
+                <br>
+                <h1>Prebuilt templates for Defi and Healthcare</h1>
+                <p1></p1>
+            </div>
+        </section>
+
+        <section class="details-container">
+            <div class="details-wrapper">
+                <ul class="details-list-wrapper">
+                    <li>blah</li>
+                    <li>blah</li>
+                    <li>blah</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- <section id="home">
+            <header>An open-source decentralized, distributed, ready-to-deploy blockchain framework</header>
+        </section> --> 
+        
     </main>
 
-    <div class="relative h-256 w-256">
-        <div id="scene"></div>
-    </div>
-    
+
     <script src="https://threejs.org/build/three.js"></script>
     <script src="app.js"></script>
 </body>

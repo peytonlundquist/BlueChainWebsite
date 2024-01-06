@@ -1,6 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: false;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+ }
+
+.hero-container {
+    background-color: rgb(22, 69, 100);
+    overflow: false;
+    height: 10cm;
+    align-content: center;
+}
+
+
+.description-container {
+    padding: 1cm;
+    background-color: rgb(0, 0, 0);
+    overflow: false;
+    height: auto;
+    align-content: center;
+}
+
+.description-wrapper {
+    background-color: rgb(0, 0, 0);
+    overflow: false;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+
+}
+
+canvas {
+    margin: auto;
+    width: 10cm;
+    height:10cm;
+    overflow: false;
+
+    background-color: rgb(22, 69, 100);
+    align-self: center;
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
+}
+
+banner {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: white;
+    padding: 2em;
+    border: 3px solid #8AC007;
+}
+
+vertical_space {
+    padding-top: 1cm;
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    padding-bottom: 1cm;
+    color: white;
+    background-color: #000000;
+    border: 0px
 }
 
 header {
@@ -39,10 +105,6 @@ nav h {
     font-size: large;
 }
 
-main {
-    padding: 20px;
-}
-
 section {
     margin-bottom: 40px;
 }
@@ -56,14 +118,14 @@ section {
     z-index: -1;
 }
 
-#scene {
+/* #scene {
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
 .relative {
     position: relative;
