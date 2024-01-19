@@ -15,6 +15,7 @@ body {
     overflow: false;
     height: 10cm;
     align-content: center;
+    margin-bottom: -10px;
 }
 
 

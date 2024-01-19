@@ -20,7 +20,7 @@ for (let i = 0; i < 25; i++) {
 
     // Adjusted range for random positions to bring nodes closer together
     node.position.x = (Math.random() - 0.5) * 5;
-    node.position.y = ((Math.random() - 0.5) * 5) - 1;
+    node.position.y = ((Math.random() - 0.5) * 5);
     node.position.z = (Math.random() - 0.5) * 5;
 
     scene.add(node);
@@ -40,8 +40,8 @@ for (let i = 0; i < 25; i++) {
     }
 }
 
-camera.position.z = 7;
-camera.position.y = -1;
+camera.position.z = 6;
+camera.position.y = 0;
 camera.position.x = 0;
 
 

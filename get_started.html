@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color:rgb(22, 69, 100);"></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Blockchain Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            color: #ffffff; /* Light blue color code */
+            font-family: 'Arial', sans-serif; /* Use a cooler font-family, e.g., Arial */
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><h>BlueChain</h></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="get_started.html">Getting Started</a></li>
+            <li><a href="docs/index.html" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+
+            <!-- Add more tabs as needed -->
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="description-container">
+            <div class="description-wrapper">
+                <h1>Getting Started</h1>
+            </div>
+        </section>
+
+        <section class="hero-container">
+            <div id="canvas" class="hero-wrapper" >
+                
+            </div>
+        </section>
+
+        <section class="description-container">
+            <div class="description-wrapper">
+                <h1>Before Using</h1><br>
+                <body>
+                    <h3>This software uses the following concepts in order to achieve a fully distributed, 
+                        decentralized blockchain network:</h3>
+                    <br>
+
+                    <ul>
+                        <li>Servent Nodes (Server + Client)</li>
+                        <li>Java Sockets + TCP / IP</li>
+                        <li>Multi-threading</li>
+                        <li>Distributed Systems</li>
+                        <li>Decentralization</li>
+                        <li>Quorum Consensus</li>
+                    </ul>
+
+                    <br><h3>BlueChain is not production-grade software, and should not be 
+                        externally hosted unless proper security has been implemented first.</h3>
+                    <br>
+
+                    <ul>
+                        <li>Lack of certain securities</li>
+                        <li>Few fail-safe mechanisms</li>
+                        <li>Short-Lived Network</li>
+                        <li>Still under development</li>
+                    </ul>
+                </body>
+            </div>
+        </section>
+
+        <section class="description-container">
+            <h1>How to Use</h1><br>
+            <h3>Prerequisites</h3>
+            <br><body>- Java 11<br>- Maven</body><br>
+            <br><h3>Running a Local Network</h3>
+            <body>
+                <br>1. Navigate to the config.properties file (network/src/main/java/config.properties)
+                <br>
+                <br>2. Configure the network to the specifications you desire. 
+                <br>
+                <br>**Warning:** The number of nodes your local machine can handle depends on the computing resources that the machine has.
+                <br>
+                <br>3. Use the startNetwork shell script (navigate back to network/)
+                <br>  
+                <br>  ./startNetwork.sh
+                <br>  
+                <br>4. Launch the client associated with the use case defined in the config file
+                <br><br>   For the Defi use case for example, run 
+                <br>  
+                <br>  $ ./startDefiWallet.sh 
+            </body><br>
+            <br><h3>Running a cross-host Network</h3>
+            <body>
+                <br>  
+                <br>  For steps 1 and 2, please refer to the 'Running a Local Netork' section's steps 1 and 2
+                <br>  
+                <br>  3. Use Maven to compile the NetworkLauncher (navigate back to network/)
+                <br>  
+                <br>    mvn clean install
+                <br>  
+                <br>  4. Running the NetworkLauncher
+                <br>
+                <br>  For this step, since we plan to run our network across multiple hosts, please ensure that the networking and firewall permissions / setting allow TCP/IP connections from the ports and hosts you will specify
+                <br><br>  Using the NetworkLauncher java program in this context works by running the program on each host you plan on using. 
+                <br><br>  Every node on each host is required to submit it's public key to the Node Registry, a directory intended to be shared across hosts. This allows each node in the network to properly use DSA with one another in addition to local peer discovery.
+                <br><br>  It is suggested to specify a '-t <timedWaitDelayMilliseconds> for each program in order for the networks to bind but wait to connect until you have every host setup
+                <br><br>  An example for our first host to run
+                <br>
+                <br>    $ java -cp target/network-1.0-SNAPSHOT.jar NetworkLauncher -t 60000
+                </body>
+        </section>        
+    </main>
+
+
+    <script src="https://threejs.org/build/three.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
